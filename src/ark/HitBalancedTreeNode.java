@@ -8,24 +8,25 @@
 
 package ark;
 
-public class HitBalancedTreeNode<T> {
+public class HitBalancedTreeNode {
 
-   protected HitBalancedTreeNode<T> leftNode;
-   protected HitBalancedTreeNode<T> rightNode;
-   protected HitBalancedTreeNode<T> parentNode;
-   protected T element;
-   private int hits;
+   protected HitBalancedTreeNode leftNode;
+   protected HitBalancedTreeNode rightNode;
+   protected HitBalancedTreeNode parentNode;
+   protected int number;
+   protected int hits;
    
    /**
     * Creates a new tree node with the specified data.
     * 
-    * @param element  the element that will become a part of the new tree
+    * @param number  the number that will become a part of the new tree
     */
-   public HitBalancedTreeNode(T element) {
-      this.element = element;
+   public HitBalancedTreeNode(int number) {
+      this.number = number;
       this.hits = 0;
       leftNode = null;
       rightNode = null;
+      parentNode = null;
    }
 
    /**
@@ -43,26 +44,26 @@ public class HitBalancedTreeNode<T> {
    }
    
    /**
-    * @return the stored element
+    * @return the stored number
     */
-   public T getElement() {
-      return element;
+   public int getnumber() {
+      return number;
    }
    
    /**
-    * Set the element in this node to the new specified element
+    * Set the number in this node to the new specified number
     * 
-    * @param element  new element to be that will become a part of the tree node
+    * @param number  new number to be that will become a part of the tree node
     */
-   public void setElement(T element) {
-      this.element = element;
+   public void setNumber(int number) {
+      this.number = number;
    }
    
    /**
     * 
     * @return the parent node
     */
-   public HitBalancedTreeNode<T> getParent() {
+   public HitBalancedTreeNode getParent() {
       return parentNode;
    }
    
@@ -70,7 +71,7 @@ public class HitBalancedTreeNode<T> {
     * 
     * @return the node that is on the left side of the node
     */
-   public HitBalancedTreeNode<T> getLeft() {
+   public HitBalancedTreeNode getLeft() {
       return leftNode;
    }
    
@@ -78,7 +79,7 @@ public class HitBalancedTreeNode<T> {
     * 
     * @return the node that is on the right side of the node
     */
-   public HitBalancedTreeNode<T> getRight() {
+   public HitBalancedTreeNode getRight() {
       return rightNode;
    }
    
@@ -86,7 +87,7 @@ public class HitBalancedTreeNode<T> {
     * sets a node on the left of this node
     * @param node  that will be on the left of this node
     */
-   public void setParent(HitBalancedTreeNode<T> node) {
+   public void setParent(HitBalancedTreeNode node) {
       parentNode = node;
    }
    
@@ -94,7 +95,7 @@ public class HitBalancedTreeNode<T> {
     * sets a node on the left of this node
     * @param node  that will be on the left of this node
     */
-   public void setLeft(HitBalancedTreeNode<T> node) {
+   public void setLeft(HitBalancedTreeNode node) {
       leftNode = node;
    }
    
@@ -102,7 +103,7 @@ public class HitBalancedTreeNode<T> {
     * sets a node on the right of this node
     * @param node  that will be on the right of this node
     */
-   public void setRight(HitBalancedTreeNode<T> node) {
+   public void setRight(HitBalancedTreeNode node) {
       rightNode = node;
    }
    
