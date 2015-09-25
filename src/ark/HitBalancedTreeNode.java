@@ -12,7 +12,7 @@ public class HitBalancedTreeNode {
 
    protected HitBalancedTreeNode leftNode;
    protected HitBalancedTreeNode rightNode;
-   protected HitBalancedTreeNode parentNode;
+   protected HitBalancedTreeNode topNode;
    protected int number;
    protected int hits;
    
@@ -26,7 +26,7 @@ public class HitBalancedTreeNode {
       this.hits = 0;
       leftNode = null;
       rightNode = null;
-      parentNode = null;
+      topNode = null;
    }
 
    /**
@@ -46,7 +46,7 @@ public class HitBalancedTreeNode {
    /**
     * @return the stored number
     */
-   public int getnumber() {
+   public int getNumber() {
       return number;
    }
    
@@ -63,8 +63,8 @@ public class HitBalancedTreeNode {
     * 
     * @return the parent node
     */
-   public HitBalancedTreeNode getParent() {
-      return parentNode;
+   public HitBalancedTreeNode getTop() {
+      return topNode;
    }
    
    /**
@@ -73,6 +73,22 @@ public class HitBalancedTreeNode {
     */
    public HitBalancedTreeNode getLeft() {
       return leftNode;
+   }
+   
+   /**
+    * 
+    * @return boolean status if the node exists
+    */
+   public boolean hasLeft() {
+      return leftNode != null;
+   }
+   
+   /**
+    * 
+    * @return boolean status if the node exists
+    */
+   public boolean hasRight() {
+      return rightNode != null;
    }
    
    /**
@@ -87,8 +103,8 @@ public class HitBalancedTreeNode {
     * sets a node on the left of this node
     * @param node  that will be on the left of this node
     */
-   public void setParent(HitBalancedTreeNode node) {
-      parentNode = node;
+   public void setTop(HitBalancedTreeNode node) {
+	   topNode = node;
    }
    
    /**
@@ -105,25 +121,6 @@ public class HitBalancedTreeNode {
     */
    public void setRight(HitBalancedTreeNode node) {
       rightNode = node;
-   }
-   
-   /**
-    * Returns the number of non-null children of this node.
-    * This method may be able to be written more efficiently.
-    *
-    * @return  the integer number of non-null children of this node 
-    */
-   public int numChildren() 
-   {
-      int children = 0;
-
-      if (leftNode != null)
-         children = 1 + leftNode.numChildren();
-
-      if (rightNode != null)
-         children = children + 1 + rightNode.numChildren();
-
-      return children;
    }
    
 }

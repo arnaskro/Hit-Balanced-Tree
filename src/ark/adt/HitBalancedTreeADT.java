@@ -34,26 +34,19 @@ public interface HitBalancedTreeADT {
 	public HitBalancedTreeNode removeNode(HitBalancedTreeNode node);
 	
 	/**
-	 * Removes the element from the tree
 	 * 
 	 * @param node
 	 * @return
 	 */
-	public int removeNumer(int number);	
+	public boolean findNode(HitBalancedTreeNode node);
 	
 	/**
 	 * 
 	 * @param node
 	 * @return
 	 */
-	public boolean findNode(HitBalancedTreeNode node);
-
-	/**
-	 * 
-	 * @param element
-	 * @return
-	 */
-	public boolean find(int number);
+	public boolean find(int node);
+	
 	
 	/**
 	 * 
