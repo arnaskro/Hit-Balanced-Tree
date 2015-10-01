@@ -31,7 +31,14 @@ public class Test {
 		
 		System.out.println(tree);
 		
+		System.out.println("Tree is balanced: " + tree.isBalanced());
 		
+		for (int i = 0; i < 4; i++)
+			tree.find(12);
+		
+		System.out.println(tree);
+		
+		System.out.println("Tree is balanced: " + tree.isBalanced());
 	}
 
 }

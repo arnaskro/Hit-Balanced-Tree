@@ -123,22 +123,7 @@ public class HitBalancedTree {
 		
 		return temp;
 	}
-		
-	public boolean remove(int targetElement) {
-		Node current = findAgain( targetElement, root );
-		
-		if (current == null)
-			return false;
-		
-		Node parent = findParent(current);
-		Node left = current.getLeft();
-		Node right = current.getRight();
-		
-		// TODO: implement remove
-		
-		return true;
-	}
-	
+
 	private Node findParent(Node target) {
 		return findParent(target, root);
 	}
@@ -171,7 +156,7 @@ public class HitBalancedTree {
 		boolean result = true;
 		
 		if (next.getElement() > current.getElement())
-			result = false;
+			return false;
 		else {
 			if (next.hasLeft())
 				result = checkBalance(current, next.getLeft());
