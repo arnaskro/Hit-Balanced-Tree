@@ -39,6 +39,8 @@ public class Test {
 		System.out.println(tree);
 		
 		System.out.println("Tree is balanced: " + tree.isBalanced());
+		
+		System.out.println(tree);
 	}
 
 }

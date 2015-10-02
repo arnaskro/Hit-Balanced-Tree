@@ -38,7 +38,7 @@ public class HitBalancedTree {
 		count++;
 	}
 	
-	public boolean find(int targetElement)
+	public int find(int targetElement)
 	{
 	   Node current = findAgain(targetElement, root);
 	   
@@ -56,10 +56,20 @@ public class HitBalancedTree {
 			   parent = findParent(current);
 		   }
 		   
+	   } else {
+		   return -1;
 	   }
 	   
-	   return current != null;
+	   return current.getElement();
 	}
+	
+	public boolean contains(int targetElement) {
+		if (findAgain(targetElement, root).getElement() == targetElement)
+			return true;
+		
+		return false;
+	}
+	
 	
 	private Node rotateRight(Node node) {
 		
